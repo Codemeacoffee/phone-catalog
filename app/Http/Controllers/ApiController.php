@@ -15,12 +15,14 @@ class ApiController extends Controller
         $this->apiBaseURL = env('API_BASE_URL');
     }
 
-    public function makeApiRequest(string $method, string $endpoint): array
+    public function makeApiRequest(string $method, string $endpoint, array $data = null): array
     {
         $client = new Client();
 
         try {
-            $response = $client->request($method, $this->apiBaseURL . $endpoint);
+            $response = $client->request($method, $this->apiBaseURL . $endpoint, [
+                'json' => $data
+            ]);
             return json_decode($response->getBody(), true);
 
         } catch (GuzzleException $e) {

@@ -26,10 +26,10 @@ class PhoneController extends Controller
         return $this->apiController->makeApiRequest('GET', '/phones/' . $id);
     }
 
-    public function store(Request $request): array
+    public function store($data): array
     {
         // Create a new phone
-        return $this->apiController->makeApiRequest('POST', '/phones');
+        return $this->apiController->makeApiRequest('POST', '/phones', $data);
     }
 
     public function destroy($id): array

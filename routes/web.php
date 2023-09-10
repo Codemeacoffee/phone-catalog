@@ -19,7 +19,11 @@ Route::post('admin', [AdminController::class, 'validateAdmin']);
 Route::middleware(['validateAdmin'])->group(function () {
     Route::get('admin/phones', [AdminController::class, 'index']);
 
-    Route::get('admin/phone/create', [AdminController::class, 'createPhoneForm']);
+    Route::get('admin/phone/create', function (){ return view('admin.createPhone'); });
+
+    Route::post('admin/phone/create', [AdminController::class, 'createPhone']);
+
+    Route::get('admin/purchases', [AdminController::class, 'purchases']);
 
     Route::get('admin/phone/delete/{id}', [AdminController::class, 'deletePhone']);
 });

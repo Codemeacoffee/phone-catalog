@@ -10,11 +10,13 @@ class AdminController extends Controller
 {
     private ApiController $apiController;
     private PhoneController $phoneController;
+    private PurchaseController $purchaseController;
 
     public function __construct()
     {
         $this->apiController = new ApiController();
         $this->phoneController = new PhoneController($this->apiController);
+        $this->purchaseController = new PurchaseController($this->apiController);
     }
 
     function index(): View
@@ -26,7 +28,33 @@ class AdminController extends Controller
         return view('admin.index')->with('phones', $phones);
     }
 
-    function deletePhone($id)
+    function purchases(): View
+    {
+        $purchases = $this->purchaseController->index();
+
+        $this->handleError($purchases);
+
+        return view('admin.purchases')->with('purchases', $purchases);
+    }
+
+    function createPhone(Request $request): RedirectResponse
+    {
+
+        $data = [
+            'name' => $request['name'],
+            'photoUrl' => $request['photoUrl'],
+            'price' => $request['price'],
+            'description' => $request['description'],
+        ];
+
+        $response = $this->phoneController->store($data);
+
+        $this->handleError($response);
+
+        return redirect('admin/phones')->with('message', 'El teléfono se ha creado con éxito.');
+    }
+
+    function deletePhone($id): RedirectResponse
     {
         $response = $this->phoneController->destroy($id);
 

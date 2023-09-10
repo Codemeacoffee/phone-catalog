@@ -14,15 +14,15 @@ class PurchaseController extends Controller
         $this->apiController = $apiController;
     }
 
-    public function index(): JsonResponse
+    public function index(): array
     {
         // Fetch a list of all purchases
         return $this->apiController->makeApiRequest('GET', '/purchases');
     }
 
-    public function store(Request $request): JsonResponse
+    public function store($data): array
     {
         // Create a new purchase
-        return $this->apiController->makeApiRequest('POST', '/purchases');
+        return $this->apiController->makeApiRequest('POST', '/purchases', $data);
     }
 }
