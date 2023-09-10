@@ -8,6 +8,15 @@
         @vite('resources/js/app.js')
     </head>
     <body>
-       <div id="app"></div>
+       <div id="app">
+           @foreach ($phones as $phone)
+               <phone-card-component
+                   :name="'{{$phone['name']}}'"
+                   :photo="'{{$phone['photoUrl']}}'"
+                   :price="'{{$phone['price']}}'"
+                   :description="'{{$phone['description']}}'"
+               ></phone-card-component>
+           @endforeach
+       </div>
     </body>
 </html>
