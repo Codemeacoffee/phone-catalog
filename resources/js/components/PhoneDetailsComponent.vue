@@ -1,12 +1,12 @@
 <template>
-    <a :href="link">
+    <div>
+        <img :src="photo" alt="Phone" />
         <div>
-            <img :src="photo" alt="Phone" />
-            <div>
-                <h2>{{ name }}</h2>
-            </div>
+            <h2>{{ name }}</h2>
+            <p>{{ price }}</p>
+            <p>{{ description }}</p>
         </div>
-    </a>
+    </div>
 </template>
 
 <script>
@@ -20,10 +20,14 @@ export default {
             type: String,
             required: true,
         },
-        link: {
+        price: {
             type: String,
             required: true,
-        }
+        },
+        description: {
+            type: String,
+            required: true,
+        },
     },
 };
 </script>
@@ -31,3 +35,4 @@ export default {
 <style scoped>
 
 </style>
+

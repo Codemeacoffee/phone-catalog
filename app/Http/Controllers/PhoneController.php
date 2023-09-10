@@ -20,19 +20,19 @@ class PhoneController extends Controller
         return $this->apiController->makeApiRequest('GET', '/phones');
     }
 
-    public function show($id): JsonResponse
+    public function show($id): array
     {
         // Fetch a specific phone by ID
         return $this->apiController->makeApiRequest('GET', '/phones/' . $id);
     }
 
-    public function store(Request $request): JsonResponse
+    public function store(Request $request): array
     {
         // Create a new phone
         return $this->apiController->makeApiRequest('POST', '/phones');
     }
 
-    public function destroy($id): JsonResponse
+    public function destroy($id): array
     {
         // Delete a phone by ID
         return $this->apiController->makeApiRequest('DELETE', '/phones/' . $id);

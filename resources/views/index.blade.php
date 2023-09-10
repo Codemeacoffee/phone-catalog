@@ -13,8 +13,7 @@
                <phone-card-component
                    :name="'{{$phone['name']}}'"
                    :photo="'{{$phone['photoUrl']}}'"
-                   :price="'{{$phone['price']}}'"
-                   :description="'{{$phone['description']}}'"
+                   :link="'{{url('phone/'.$phone['id'])}}'"
                ></phone-card-component>
            @endforeach
        </div>

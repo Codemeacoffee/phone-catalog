@@ -21,4 +21,11 @@ class MainController extends Controller
 
         return view('index')->with('phones', $phones);
     }
+
+    function phoneDetails($id): View
+    {
+        $phone = $this->phoneController->show($id);
+
+        return view('phoneDetails')->with('phone', $phone);
+    }
 }
