@@ -21,7 +21,7 @@ class MainController extends Controller
 
         $this->handleError($phones);
 
-        return view('index')->with('phones', $phones);
+        return view('main.index')->with('phones', $phones);
     }
 
     function phoneDetails($id): View
@@ -30,7 +30,7 @@ class MainController extends Controller
 
         $this->handleError($phone);
 
-        return view('phoneDetails')->with('phone', $phone);
+        return view('main.phoneDetails')->with('phone', $phone);
     }
 
 

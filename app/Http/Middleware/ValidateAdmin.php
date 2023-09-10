@@ -15,7 +15,7 @@ class ValidateAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->cookie('isAdmin') !== env('ADMIN_PASSWORD')) return response()->view('adminAuth');
+        if ($request->cookie('isAdmin') !== env('ADMIN_PASSWORD')) return redirect('admin');
 
         return $next($request);
     }

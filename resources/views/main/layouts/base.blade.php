@@ -4,17 +4,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel</title>
+    <title>Phone Catalog - @yield('title')</title>
     @vite('resources/js/app.js')
 </head>
 <body>
 <div id="app">
-    <phone-details-component
-        :name="'{{$phone['name']}}'"
-        :photo="'{{$phone['photoUrl']}}'"
-        :price="'{{$phone['price']}} €'"
-        :description="'{{$phone['description']}}'"
-    ></phone-details-component>
+    @yield('content')
+
+    @if (session('message'))
+        <message-component
+            :message="'{{session('message')}}'"
+        ></message-component>
+    @endif
 </div>
 </body>
 </html>
