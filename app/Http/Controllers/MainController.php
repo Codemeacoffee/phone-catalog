@@ -19,6 +19,8 @@ class MainController extends Controller
     {
         $phones = $this->phoneController->index();
 
+        $this->handleError($phones);
+
         return view('index')->with('phones', $phones);
     }
 
@@ -26,6 +28,11 @@ class MainController extends Controller
     {
         $phone = $this->phoneController->show($id);
 
+        $this->handleError($phone);
+
         return view('phoneDetails')->with('phone', $phone);
     }
+
+
+
 }

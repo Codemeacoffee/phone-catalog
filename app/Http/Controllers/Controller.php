@@ -9,4 +9,9 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
+
+    function handleError(array $array): void
+    {
+        if(isset($array['error'])) abort($array['error']);
+    }
 }
