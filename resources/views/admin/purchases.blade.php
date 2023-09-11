@@ -2,6 +2,8 @@
 
 @section('title', 'Compras')
 
+@section('active', 'purchases')
+
 @section('content')
     @foreach ($purchases as $purchase)
        <purchase-card-component

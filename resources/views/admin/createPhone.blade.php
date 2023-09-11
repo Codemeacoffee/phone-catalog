@@ -2,6 +2,8 @@
 
 @section('title', 'Añadir un nuevo teléfono')
 
+@section('active', 'createPhone')
+
 @section('content')
     <create-phone-component
         :action="'{{url('admin/phone/create')}}'"

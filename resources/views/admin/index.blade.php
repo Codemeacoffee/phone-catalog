@@ -2,6 +2,8 @@
 
 @section('title', 'Panel de Control')
 
+@section('active', 'admin')
+
 @section('content')
     <div class="container-fluid">
         <div class="row">

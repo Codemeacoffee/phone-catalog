@@ -1,18 +1,14 @@
 <template>
-    <div>
+    <div class="centered bg-white rounded px-5 py-4">
         <form method="POST" :action="action">
-            <div class="form-group">
-                <label for="password">Contraseña:</label>
-                <input
-                    id="password"
-                    type="password"
-                    name="password"
-                    class="form-control"
-                    required
-                />
-                <input type="hidden" name="_token" :value="csrf">
+            <div class="form-group mb-4">
+                <label for="password"><strong>Contraseña</strong></label>
+                <input type="password" class="form-control" id="password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary">Acceder</button>
+            <input type="hidden" name="_token" :value="csrf">
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary"><strong>Acceder</strong></button>
+            </div>
         </form>
     </div>
 </template>
@@ -33,5 +29,9 @@ export default {
 </script>
 
 <style scoped>
-
+    .centered{
+        margin-left: 50vw;
+        margin-top: 50vh;
+        transform: translate(-50%, -50%);
+    }
 </style>

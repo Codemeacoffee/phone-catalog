@@ -1,9 +1,13 @@
 <template>
     <div v-if="showDialog" class="popup-dialog">
-        <div class="popup-content">
-            <button class="close-button" @click="closeDialog">X</button>
-            <p>{{ message }}</p>
-            <button @click="closeDialog">Cerrar</button>
+        <div class="popup-content bg-white rounded px-4 pb-3">
+            <button type="button" class="close" @click="closeDialog">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="mt-5 mx-5">
+                <h6>{{ message }}</h6>
+            </div>
+            <button type="button" class="btn btn-secondary" @click="closeDialog"><strong>Cerrar</strong></button>
         </div>
     </div>
 </template>
@@ -44,32 +48,12 @@
     }
 
     .popup-content {
-        background: white;
-        padding: 20px;
-        border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         text-align: center;
-        position: relative;
     }
 
     button {
         margin-top: 10px;
         cursor: pointer;
-    }
-
-    .close-button {
-        position: absolute;
-        top: 5px;
-        right: 10px;
-        background: none;
-        border: none;
-        font-size: 14px;
-        cursor: pointer;
-        padding: 0;
-        outline: none;
-    }
-
-    .close-button:hover {
-        color: red;
     }
 </style>

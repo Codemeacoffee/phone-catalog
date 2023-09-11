@@ -9,7 +9,7 @@
                     <div class="card-block px-2">
                         <h4 class="card-title mt-4">{{ name }}</h4>
                         <p class="card-text">{{ description }}</p>
-                        <a :href="link" class="btn btn-primary">Ver más</a>
+                        <a :href="link" class="btn btn-primary"><strong>Ver más</strong></a>
                     </div>
                 </div>
             </div>
