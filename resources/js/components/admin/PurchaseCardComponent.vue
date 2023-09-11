@@ -1,12 +1,10 @@
 <template>
     <div>
-        <img :src="photo" alt="Phone" />
-        <div>
-            <h2>{{ name }}</h2>
-            <p>{{ price }}</p>
-            <p>{{ description }}</p>
-            <a :href="purchase_link">Comprar</a>
-        </div>
+        <h2>{{ name }}</h2>
+        <img :src="photo" alt="Purchase Photo" />
+        <p><strong>Price:</strong> {{ price }} €</p>
+        <p><strong>Description:</strong> {{ description }}</p>
+        <p><strong>Username:</strong> {{ username }}</p>
     </div>
 </template>
 
@@ -29,7 +27,7 @@ export default {
             type: String,
             required: true,
         },
-        purchase_link: {
+        username: {
             type: String,
             required: true,
         },
@@ -40,4 +38,3 @@ export default {
 <style scoped>
 
 </style>
-

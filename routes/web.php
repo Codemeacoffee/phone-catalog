@@ -8,6 +8,8 @@ Route::get('/', [MainController::class, 'index']);
 
 Route::get('phone/{id}', [MainController::class, 'phoneDetails']);
 
+Route::get('purchase/{id}', [MainController::class, 'purchase']);
+
 //------------------------------- ADMIN ROUTES -------------------------------//
 
 Route::get('admin', function (){ return view('admin.auth'); });

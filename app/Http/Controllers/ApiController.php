@@ -15,7 +15,7 @@ class ApiController extends Controller
         $this->apiBaseURL = env('API_BASE_URL');
     }
 
-    public function makeApiRequest(string $method, string $endpoint, array $data = null): array
+    public function makeApiRequest(string $method, string $endpoint, array $data = []): array
     {
         $client = new Client();
 

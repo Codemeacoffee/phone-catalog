@@ -20,9 +20,9 @@ class PurchaseController extends Controller
         return $this->apiController->makeApiRequest('GET', '/purchases');
     }
 
-    public function store($data): array
+    public function store($id, $username): array
     {
         // Create a new purchase
-        return $this->apiController->makeApiRequest('POST', '/purchases', $data);
+        return $this->apiController->makeApiRequest('POST', '/phones/'.$id.'/buy', ["username" => $username]);
     }
 }
