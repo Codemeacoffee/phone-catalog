@@ -6,6 +6,16 @@
 
 2 - Using a browser, navigate to the project's public directory (usually https://localhost/phonecatalog/public)
 
+*** How to test the app ***
+
+1 - After compleating the steps provided in the "How to run the app" section, open a CMD.
+
+2 - Using the CMD, navigate to the folder that contains the project.
+
+3 - Execute the following command "php artisan test"
+
+4 - The tests should run and all of them should pass
+
 *** Design and Architectural decisions ***
 
 1 - I decided to use Laravel as a backend framework and VUE as a frontend framework because they work well together and they have an easy integration thanks to VITE.
@@ -24,4 +34,3 @@ or the Bcrypt method but, as the project doesn't use a database and requires the
 
 3 - The phone purchase functionality uses the default user "testUser" because the app doesn't have user registration, but in a regular project, one would need to implement
 user authentication before integrating a purchase funtionality.
-
