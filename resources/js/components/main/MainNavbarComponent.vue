@@ -11,7 +11,7 @@
                     <a class="nav-link" :href="base_url">Inicio</a>
                 </li>
             </ul>
-            <a class="nav-link" :href="admin_url">Admin</a>
+            <a class="nav-link" :href="admin_url"><button class="btn btn-primary"><strong>Admin</strong></button></a>
         </div>
     </nav>
 </template>

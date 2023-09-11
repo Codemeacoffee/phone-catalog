@@ -10,14 +10,18 @@
                     class="form-control"
                     required
                 />
+            </div>
+            <div class="form-group">
                 <label for="price">Precio:</label>
                 <input
                     id="price"
-                    type="text"
+                    type="number"
                     name="price"
                     class="form-control"
                     required
                 />
+            </div>
+            <div class="form-group">
                 <label for="photoUrl">Url de la imagen:</label>
                 <input
                     id="photoUrl"
@@ -26,6 +30,8 @@
                     class="form-control"
                     required
                 />
+            </div>
+            <div class="form-group">
                 <label for="description">Descripción:</label>
                 <input
                     id="description"
@@ -34,9 +40,11 @@
                     class="form-control"
                     required
                 />
-                <input type="hidden" name="_token" :value="csrf">
             </div>
-            <button type="submit" class="btn btn-primary">Acceder</button>
+            <input type="hidden" name="_token" :value="csrf">
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary"><strong>Añadir nuevo teléfono</strong></button>
+            </div>
         </form>
     </div>
 </template>
@@ -57,5 +65,8 @@ export default {
 </script>
 
 <style scoped>
-
+    label{
+        color: white;
+        font-weight: bold;
+    }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light mb-5">
-        <a class="navbar-brand" :href="admin_url">Administración</a>
+        <a class="navbar-brand" :href="admin_url">Admin</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -17,7 +17,7 @@
                     <a :class="(active === 'purchases')? 'nav-link active' : 'nav-link'" :href="purchases_url">Compras</a>
                 </li>
             </ul>
-            <a class="nav-link" :href="base_url">Salir</a>
+            <a class="nav-link" :href="base_url"><button class="btn btn-danger"><strong>Salir</strong></button></a>
         </div>
     </nav>
 </template>
