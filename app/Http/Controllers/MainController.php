@@ -13,6 +13,7 @@ class MainController extends Controller
 
     public function __construct()
     {
+        //Instantiate the controllers that manage the API connection
         $this->apiController = new ApiController();
         $this->phoneController = new PhoneController($this->apiController);
         $this->purchaseController = new PurchaseController($this->apiController);
@@ -20,6 +21,7 @@ class MainController extends Controller
 
     function index(): View
     {
+        //Get all phones and return a view to showcase them
         $phones = $this->phoneController->index();
 
         return view('main.index')->with('phones', $phones);
@@ -27,6 +29,7 @@ class MainController extends Controller
 
     function phoneDetails($id): View
     {
+        //Get a phone by ID and return a view to showcase it
         $phone = $this->phoneController->show($id);
 
         return view('main.phoneDetails')->with('phone', $phone);
@@ -34,6 +37,7 @@ class MainController extends Controller
 
     function purchase($id): RedirectResponse
     {
+        //Purchase a phone by Id using the test user "testUser"
         $this->purchaseController->store($id, 'testUser');
 
         return redirect('phone/'.$id)->with('message', 'Su compra se ha realizado con éxito.');
