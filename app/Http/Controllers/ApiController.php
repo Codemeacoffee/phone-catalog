@@ -26,7 +26,7 @@ class ApiController extends Controller
             return json_decode($response->getBody(), true);
 
         } catch (GuzzleException $e) {
-            return ['error' => $e->getCode()];
+            abort($e->getCode());
         }
     }
 }

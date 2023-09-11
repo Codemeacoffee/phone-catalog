@@ -22,8 +22,6 @@ class MainController extends Controller
     {
         $phones = $this->phoneController->index();
 
-        $this->handleError($phones);
-
         return view('main.index')->with('phones', $phones);
     }
 
@@ -31,20 +29,12 @@ class MainController extends Controller
     {
         $phone = $this->phoneController->show($id);
 
-        $this->handleError($phone);
-
         return view('main.phoneDetails')->with('phone', $phone);
     }
 
     function purchase($id): RedirectResponse
     {
-        $phone = $this->phoneController->show($id);
-
-        $this->handleError($phone);
-
-        $response = $this->purchaseController->store($id, 'testUser');
-
-        $this->handleError($response);
+        $this->purchaseController->store($id, 'testUser');
 
         return redirect('phone/'.$id)->with('message', 'Su compra se ha realizado con éxito.');
     }

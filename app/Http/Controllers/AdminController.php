@@ -23,16 +23,12 @@ class AdminController extends Controller
     {
         $phones = $this->phoneController->index();
 
-        $this->handleError($phones);
-
         return view('admin.index')->with('phones', $phones);
     }
 
     function purchases(): View
     {
         $purchases = $this->purchaseController->index();
-
-        $this->handleError($purchases);
 
         return view('admin.purchases')->with('purchases', $purchases);
     }
@@ -47,18 +43,14 @@ class AdminController extends Controller
             'description' => $request['description'],
         ];
 
-        $response = $this->phoneController->store($data);
-
-        $this->handleError($response);
+        $this->phoneController->store($data);
 
         return redirect('admin/phones')->with('message', 'El teléfono se ha creado con éxito.');
     }
 
     function deletePhone($id): RedirectResponse
     {
-        $response = $this->phoneController->destroy($id);
-
-        $this->handleError($response);
+        $this->phoneController->destroy($id);
 
         return redirect('admin/phones')->with('message', 'El teléfono se ha borrado exitosamente.');
     }

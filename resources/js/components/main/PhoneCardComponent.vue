@@ -1,12 +1,20 @@
 <template>
-    <a :href="link">
-        <div>
-            <img :src="photo" alt="Phone" />
-            <div>
-                <h2>{{ name }}</h2>
+    <div class="container">
+        <div class="card">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <img class="card-img-top" :src="photo" :alt="name" />
+                </div>
+                <div class="col">
+                    <div class="card-block px-2">
+                        <h4 class="card-title mt-4">{{ name }}</h4>
+                        <p class="card-text">{{ description }}</p>
+                        <a :href="link" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </a>
+    </div>
 </template>
 
 <script>
@@ -20,6 +28,10 @@ export default {
             type: String,
             required: true,
         },
+        description: {
+            type: String,
+            required: true,
+        },
         link: {
             type: String,
             required: true,
@@ -29,5 +41,9 @@ export default {
 </script>
 
 <style scoped>
-
+    img{
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
 </style>
